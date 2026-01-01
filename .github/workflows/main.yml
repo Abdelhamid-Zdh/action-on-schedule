@@ -1,12 +1,14 @@
-name: Daily Fixtures Release
-
+name: Daily release 
 on:
+  push:
+    branches:
+      - Daily release
+      - main
   schedule:
-    - cron: '0 1 * * *'  # 1 AM daily
-  workflow_dispatch:       # allows manual run if needed
+    - cron: '*/5 * * * *'
 
 permissions:
-  contents: write  # required to create tags and releases
+  contents: write
 
 jobs:
   build:
