@@ -19,7 +19,7 @@
         "timestamp": 1767288600,
         "periods": {
           "first": 1767288600,
-          "second": null
+          "second": 1767292200
         },
         "venue": {
           "id": 525,
@@ -27,10 +27,10 @@
           "city": "London"
         },
         "status": {
-          "long": "Halftime",
-          "short": "HT",
-          "elapsed": 45,
-          "extra": 5
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 52,
+          "extra": null
         }
       },
       "league": {
@@ -89,7 +89,7 @@
         "timestamp": 1767288600,
         "periods": {
           "first": 1767288600,
-          "second": null
+          "second": 1767292200
         },
         "venue": {
           "id": 550,
@@ -97,10 +97,10 @@
           "city": "Liverpool"
         },
         "status": {
-          "long": "Halftime",
-          "short": "HT",
-          "elapsed": 45,
-          "extra": 3
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 55,
+          "extra": null
         }
       },
       "league": {
