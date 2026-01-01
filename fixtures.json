@@ -27,10 +27,10 @@
           "city": "London"
         },
         "status": {
-          "long": "Second Half",
-          "short": "2H",
-          "elapsed": 63,
-          "extra": null
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90,
+          "extra": 6
         }
       },
       "league": {
@@ -48,18 +48,18 @@
           "id": 52,
           "name": "Crystal Palace",
           "logo": "https://media.api-sports.io/football/teams/52.png",
-          "winner": true
+          "winner": null
         },
         "away": {
           "id": 36,
           "name": "Fulham",
           "logo": "https://media.api-sports.io/football/teams/36.png",
-          "winner": false
+          "winner": null
         }
       },
       "goals": {
         "home": 1,
-        "away": 0
+        "away": 1
       },
       "score": {
         "halftime": {
@@ -67,8 +67,8 @@
           "away": 0
         },
         "fulltime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "extratime": {
           "home": null,
@@ -97,10 +97,10 @@
           "city": "Liverpool"
         },
         "status": {
-          "long": "Second Half",
-          "short": "2H",
-          "elapsed": 66,
-          "extra": null
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90,
+          "extra": 7
         }
       },
       "league": {
@@ -137,8 +137,8 @@
           "away": 0
         },
         "fulltime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "extratime": {
           "home": null,
@@ -153,12 +153,12 @@
     {
       "fixture": {
         "id": 1379150,
-        "referee": null,
+        "referee": "Andy Madley, England",
         "timezone": "UTC",
         "date": "2026-01-01T20:00:00+00:00",
         "timestamp": 1767297600,
         "periods": {
-          "first": null,
+          "first": 1767297600,
           "second": null
         },
         "venue": {
@@ -167,9 +167,9 @@
           "city": "London"
         },
         "status": {
-          "long": "Not Started",
-          "short": "NS",
-          "elapsed": null,
+          "long": "First Half",
+          "short": "1H",
+          "elapsed": 41,
           "extra": null
         }
       },
@@ -198,13 +198,13 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "score": {
         "halftime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "fulltime": {
           "home": null,
@@ -223,12 +223,12 @@
     {
       "fixture": {
         "id": 1379157,
-        "referee": null,
+        "referee": "Jarred Gillett, Australia",
         "timezone": "UTC",
         "date": "2026-01-01T20:00:00+00:00",
         "timestamp": 1767297600,
         "periods": {
-          "first": null,
+          "first": 1767297600,
           "second": null
         },
         "venue": {
@@ -237,9 +237,9 @@
           "city": "Sunderland"
         },
         "status": {
-          "long": "Not Started",
-          "short": "NS",
-          "elapsed": null,
+          "long": "First Half",
+          "short": "1H",
+          "elapsed": 42,
           "extra": null
         }
       },
@@ -268,13 +268,13 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "score": {
         "halftime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "fulltime": {
           "home": null,
