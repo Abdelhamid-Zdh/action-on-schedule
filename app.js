@@ -4,7 +4,7 @@ import dotenv from 'dotenv'; // Load environment variables from .env
 
 dotenv.config();
 
-const apiKey = process.env["API_SPORTS_KEY"];
+const apiKey = "9980c216012010b2c3b542aab3058039";
 if (!apiKey) {
   throw new Error("API_SPORTS_KEY environment variable is not set");
 }
