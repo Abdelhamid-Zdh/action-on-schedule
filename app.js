@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'; // ensure node-fetch is installed
+// import fetch from 'node-fetch'; // ensure node-fetch is installed
 import fs from 'fs'; // Node file system module
 import dotenv from 'dotenv'; // Load environment variables from .env
 
