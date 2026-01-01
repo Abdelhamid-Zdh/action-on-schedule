@@ -23,7 +23,8 @@ jobs:
 
       - name: Commit fixtures
         run: |
-          git config user.email "github@github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add fixtures.json
           git commit -m "Update fixtures"
           git push
