@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - schedule
-      - main
+      - main 
   schedule:
     - cron: '0 1 * * *'
 
