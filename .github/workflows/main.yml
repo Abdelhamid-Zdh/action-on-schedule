@@ -28,18 +28,40 @@ jobs:
       - name: Run fixtures script
         run: node app.js
 
-      # Step 4: Deploy to public-data branch
+      # Step 4: Deploy to public-data branch - SIMPLIFIED VERSION
       - name: Deploy to public-data branch
         run: |
-          # Create or reset public-data branch with only fixtures.json
-          git checkout --orphan public-data
-          git rm -rf .
-          cp ../fixtures.json .
-          git add fixtures.json
+          # Save the current fixtures.json to a safe location
+          cp fixtures.json /tmp/fixtures-backup.json
+          
+          # Create a temporary directory for the public branch
+          mkdir -p /tmp/public-repo
+          cp /tmp/fixtures-backup.json /tmp/public-repo/fixtures.json
+          
+          # Check if public-data branch exists, create if not
+          if git show-ref --verify --quiet refs/remotes/origin/public-data; then
+            echo "public-data branch exists, updating..."
+            git checkout public-data
+            git pull origin public-data
+          else
+            echo "Creating new public-data branch..."
+            git checkout --orphan public-data
+          fi
+          
+          # Remove all current files
+          rm -rf *
+          
+          # Copy only fixtures.json back
+          cp /tmp/public-repo/fixtures.json .
+          
+          # Commit and push
+          git add -f fixtures.json
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git commit -m "Update fixtures data"
           git push origin public-data --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Step 5: Create a daily tag (overwrite if exists)
       - name: Create daily tag
