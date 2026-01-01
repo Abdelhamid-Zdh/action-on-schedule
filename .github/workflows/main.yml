@@ -28,7 +28,20 @@ jobs:
       - name: Run fixtures script
         run: node app.js
 
-      # Step 4: Create a daily tag (overwrite if exists)
+      # Step 4: Deploy to public-data branch
+      - name: Deploy to public-data branch
+        run: |
+          # Create or reset public-data branch with only fixtures.json
+          git checkout --orphan public-data
+          git rm -rf .
+          cp ../fixtures.json .
+          git add fixtures.json
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git commit -m "Update fixtures data"
+          git push origin public-data --force
+
+      # Step 5: Create a daily tag (overwrite if exists)
       - name: Create daily tag
         id: tag
         run: |
@@ -38,11 +51,10 @@ jobs:
           git tag -f $TAG
           git push origin $TAG --force
           echo "tag=$TAG" >> $GITHUB_OUTPUT
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 5: Create (or update) release and upload fixtures.json
+      # Step 6: Create (or update) release and upload fixtures.json
       - name: Create Release and Upload fixtures.json
         uses: softprops/action-gh-release@v1
         with:
