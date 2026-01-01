@@ -1,4 +1,3 @@
-Set-Content .github/workflows/main.yml @'
 name: schedule
 on:
   push:
@@ -21,4 +20,3 @@ jobs:
 
       - name: Run script
         run: node app.js
-'@
