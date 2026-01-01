@@ -1,11 +1,11 @@
 name: schedule
+
 on:
   push:
     branches:
-      - schedule
       - main
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
@@ -16,18 +16,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '24'
 
+      - name: Install deps
+        run: npm install
+
       - name: Run script
         run: node app.js
 
-      - name: Commit fixtures
+      - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add fixtures.json
-          git commit -m "Update fixtures"
+          git commit -m "Update fixtures" || echo "No changes"
           git push
