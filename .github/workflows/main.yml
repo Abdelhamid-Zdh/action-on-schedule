@@ -1,40 +1,52 @@
-name: Update Fixtures
+name: Daily Fixtures Release
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 1 AM daily
-  workflow_dispatch:
+    - cron: '0 1 * * *'  # 1 AM daily
+  workflow_dispatch:       # allows manual run if needed
 
 permissions:
-  contents: write  # Needed to create releases
+  contents: write  # required to create tags and releases
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Step 1: Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node
+      # Step 2: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '24'
 
-      - name: Run script
-        run: node app.js  # generates fixtures.json
+      # Step 3: Run your Node script to generate fixtures.json
+      - name: Run fixtures script
+        run: node app.js
 
-      - name: Create Release and Upload Asset
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: 'daily-fixtures'
-          name: 'daily-fixtures'
-          body: 'Updated fixtures for today'
-          draft: false
+      # Step 4: Create a daily tag (overwrite if exists)
+      - name: Create daily tag
+        id: tag
+        run: |
+          TAG="daily-$(date +%Y-%m-%d)"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git tag -f $TAG
+          git push origin $TAG --force
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload fixtures.json
+      # Step 5: Create (or update) release and upload fixtures.json
+      - name: Create Release and Upload fixtures.json
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: ${{ steps.tag.outputs.tag }}
+          body: "Daily fixtures for ${{ steps.tag.outputs.tag }}"
           files: fixtures.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
