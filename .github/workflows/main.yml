@@ -24,7 +24,7 @@ jobs:
 
       - name: Download app.js from Gist
         run: |
-          curl -o app.js https://gist.github.com/Abdelhamid-Zdh/5ad3981425655b311a53dcbb484afef6.js
+          curl -o app.js https://gist.githubusercontent.com/Abdelhamid-Zdh/5ad3981425655b311a53dcbb484afef6/raw/eec0dee43fb73954ecf6b988b10e9b41aca5be70/app.js
 
       - name: Run script
         run: node app.js
