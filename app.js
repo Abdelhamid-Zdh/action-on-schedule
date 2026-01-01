@@ -1,8 +1,8 @@
 // import fetch from 'node-fetch'; // ensure node-fetch is installed
-import fs from 'fs'; // Node file system module
-import dotenv from 'dotenv'; // Load environment variables from .env
+// import fs from 'fs'; // Node file system module
+// import dotenv from 'dotenv'; // Load environment variables from .env
 
-dotenv.config();
+// dotenv.config();
 
 const apiKey = "9980c216012010b2c3b542aab3058039";
 if (!apiKey) {
