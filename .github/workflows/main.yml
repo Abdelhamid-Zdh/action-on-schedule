@@ -1,14 +1,12 @@
-name: schedule
+name: Update Fixtures
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *'  # 1 AM daily
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write  # Needed to create releases
 
 jobs:
   build:
@@ -22,12 +20,21 @@ jobs:
           node-version: '24'
 
       - name: Run script
-        run: node app.js
+        run: node app.js  # generates fixtures.json
 
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add fixtures.json
-          git commit -m "Update fixtures" || echo "No changes"
-          git push
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 'daily-fixtures'
+          name: 'daily-fixtures'
+          body: 'Updated fixtures for today'
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload fixtures.json
+        uses: softprops/action-gh-release@v1
+        with:
+          files: fixtures.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
