@@ -22,6 +22,10 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Download app.js from Gist
+        run: |
+          curl -o app.js https://gist.github.com/Abdelhamid-Zdh/5ad3981425655b311a53dcbb484afef6.js
+
       - name: Run script
         run: node app.js
 
