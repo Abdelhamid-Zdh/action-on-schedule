@@ -40,7 +40,7 @@ fetch(`https://v3.football.api-sports.io/fixtures?date=${formattedDate}`, reques
       console.log(`${element.league.name} - ${element.teams.home.name} vs ${element.teams.away.name} - Kickoff: ${date.getHours()}:${date.getMinutes()}`);
     });
     // write JSON to a file
-    fs.writeFile("./fixtures.json", JSON.stringify(data, null, 2), (err) => {
+    fs.writeFile("fixtures.json", JSON.stringify(data, null, 2), (err) => {
       if (err) {
         console.error("Error writing file:", err);
       } else {
