@@ -5,11 +5,10 @@ on:
       - schedule
       - main
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 1 * * *'
 
 permissions:
   contents: write
-
 
 jobs:
   build:
