@@ -4,7 +4,7 @@
     "date": "2026-01-02"
   },
   "errors": [],
-  "results": 69,
+  "results": 74,
   "paging": {
     "current": 1,
     "total": 1
@@ -13,24 +13,24 @@
     {
       "fixture": {
         "id": 1436029,
-        "referee": null,
+        "referee": "Fareeh Al-Jaloud, Saudi Arabia",
         "timezone": "UTC",
         "date": "2026-01-02T13:30:00+00:00",
         "timestamp": 1767360600,
         "periods": {
-          "first": null,
-          "second": null
+          "first": 1767360600,
+          "second": 1767364200
         },
         "venue": {
-          "id": null,
-          "name": null,
-          "city": null
+          "id": 4630,
+          "name": "Al-Najma Club Stadium",
+          "city": "Unaizah"
         },
         "status": {
-          "long": "Not Started",
-          "short": "NS",
-          "elapsed": null,
-          "extra": null
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90,
+          "extra": 9
         }
       },
       "league": {
@@ -58,17 +58,17 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "score": {
         "halftime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "fulltime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 2
         },
         "extratime": {
           "home": null,
@@ -83,13 +83,13 @@
     {
       "fixture": {
         "id": 1436027,
-        "referee": null,
+        "referee": "Shukri Alhunfush, Saudi Arabia",
         "timezone": "UTC",
         "date": "2026-01-02T14:35:00+00:00",
         "timestamp": 1767364500,
         "periods": {
-          "first": null,
-          "second": null
+          "first": 1767364500,
+          "second": 1767368100
         },
         "venue": {
           "id": 22434,
@@ -97,10 +97,10 @@
           "city": "Ad Dammām (Dammam)"
         },
         "status": {
-          "long": "Not Started",
-          "short": "NS",
-          "elapsed": null,
-          "extra": null
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90,
+          "extra": 8
         }
       },
       "league": {
@@ -118,27 +118,27 @@
           "id": 2934,
           "name": "Al-Ettifaq",
           "logo": "https://media.api-sports.io/football/teams/2934.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2977,
           "name": "Al Okhdood",
           "logo": "https://media.api-sports.io/football/teams/2977.png",
-          "winner": null
+          "winner": false
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "score": {
         "halftime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "fulltime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "extratime": {
           "home": null,
@@ -158,8 +158,8 @@
         "date": "2026-01-02T17:30:00+00:00",
         "timestamp": 1767375000,
         "periods": {
-          "first": null,
-          "second": null
+          "first": 1767375000,
+          "second": 1767378600
         },
         "venue": {
           "id": 1364,
@@ -167,10 +167,10 @@
           "city": "Jeddah"
         },
         "status": {
-          "long": "Not Started",
-          "short": "NS",
-          "elapsed": null,
-          "extra": null
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 90,
+          "extra": 8
         }
       },
       "league": {
@@ -188,23 +188,23 @@
           "id": 2929,
           "name": "Al-Ahli Jeddah",
           "logo": "https://media.api-sports.io/football/teams/2929.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2939,
           "name": "Al-Nassr",
           "logo": "https://media.api-sports.io/football/teams/2939.png",
-          "winner": null
+          "winner": false
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 2
       },
       "score": {
         "halftime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 2
         },
         "fulltime": {
           "home": null,
@@ -223,7 +223,7 @@
     {
       "fixture": {
         "id": 1378035,
-        "referee": null,
+        "referee": "Rosario Abisso, Italy",
         "timezone": "UTC",
         "date": "2026-01-02T19:45:00+00:00",
         "timestamp": 1767383100,
@@ -293,7 +293,7 @@
     {
       "fixture": {
         "id": 1387850,
-        "referee": null,
+        "referee": "Mathieu Vernice, France",
         "timezone": "UTC",
         "date": "2026-01-02T19:45:00+00:00",
         "timestamp": 1767383100,
@@ -363,7 +363,7 @@
     {
       "fixture": {
         "id": 1390995,
-        "referee": null,
+        "referee": "Miguel Angel Ortiz Arias, Spain",
         "timezone": "UTC",
         "date": "2026-01-02T20:00:00+00:00",
         "timestamp": 1767384000,
