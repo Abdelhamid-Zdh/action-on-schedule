@@ -4,7 +4,7 @@
     "date": "2026-01-05"
   },
   "errors": {
-    "access": "Your account is suspended, check on https://dashboard.api-football.com."
+    "token": "Error/Missing application key. Go to https://www.api-football.com/documentation-v3 to learn how to get your API application key."
   },
   "results": 0,
   "paging": {
